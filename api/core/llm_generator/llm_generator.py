@@ -19,7 +19,7 @@ from core.prompt.utils.prompt_template_parser import PromptTemplateParser
 class LLMGenerator:
     @classmethod
     def generate_conversation_name(
-        cls, tenant_id: str, query, conversation_id: Optional[str] = None, app_id: Optional[str] = None
+            cls, tenant_id: str, query, conversation_id: Optional[str] = None, app_id: Optional[str] = None
     ):
         prompt = CONVERSATION_TITLE_PROMPT
 
@@ -78,6 +78,9 @@ class LLMGenerator:
         prompt_template = PromptTemplateParser(
             template="{{histories}}\n{{format_instructions}}\nquestions:\n"
         )
+
+        parts = histories.split("Human:")
+        histories = "Human:" + parts[-1].strip()
 
         prompt = prompt_template.format({
             "histories": histories,
