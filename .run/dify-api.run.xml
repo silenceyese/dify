@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="dify-api" type="docker-deploy" factoryName="dockerfile" server-name="Docker-美国服务器">
+  <configuration default="false" name="dify-api" type="docker-deploy" factoryName="dockerfile" server-name="Docker-4028">
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="dify/api:1.0.0" />
